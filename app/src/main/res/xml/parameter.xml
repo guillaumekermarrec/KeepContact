@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/GeneralSettings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="EnableNotification"
+            android:summary="@string/enableReminderSummary"
+            android:title="@string/enableReminder" >
+        </CheckBoxPreference>
+
+        <ListPreference
+            android:entries="@array/syncFrequency"
+            android:defaultValue="3"
+            android:entryValues="@array/syncFrequencyValues"
+            android:key="prefSyncFrequency"
+            android:summary="@string/sync_frequency_summary"
+            android:title="@string/sync_frequency" />
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/AboutSetting" >
+    <PreferenceScreen
+            android:key="about"
+            android:summary="@string/aboutSummary"
+            android:title="@string/about" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetClass="com.guillaumek.keepcontact.About"
+                android:targetPackage="com.guillaumek.keepcontact" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="rate"
+            android:summary="@string/rateSummary"
+            android:title="@string/rate" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://play.google.com/store/apps/details?id=com.guillaumek.keepcontact" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
